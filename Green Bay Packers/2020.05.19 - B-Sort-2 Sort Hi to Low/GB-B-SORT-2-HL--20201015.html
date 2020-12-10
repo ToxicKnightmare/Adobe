@@ -1,0 +1,68 @@
+<style>
+    .sorter-label:not(.new), select#sorter, a.sorter-action {
+        display: none !important;
+    }
+    select#sorter2 {
+        width:190px;
+        height: 32px;
+    }
+</style>
+<script>
+    function getQueryParams() {
+        var vars = [], hash;
+        var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+        for(var i = 0; i < hashes.length; i++)
+        {
+            hash = hashes[i].split('=');
+            vars.push(hash[0]);
+            vars[hash[0]] = hash[1];
+        }
+        return vars;
+    }
+    
+    var sorter2 = '<label class="sorter-label new" for="sorter">Sort By</label><select class="sorter-options" data-role="sorter" id="sorter2" style="height: 32px; width: 190px;"><option data-value="desc" value="position" selected="selected">Recommended</option><option data-value="desc" value="name">Product Name</option><option data-value="asc" value="priceD">Price: High-Low</option><option data-value="desc" value="price">Price: Low-High</option><option data-value="desc" value="news_from_date">Newest</option></select>';
+    console.log(sorter2);
+    var waitforSorter = setInterval(function() {
+        if (jQuery('#sorter2').length) {
+            // dont add another sort
+        } else {
+            jQuery('.toolbar-sorter.sorter').prepend(sorter2);
+            var listOrder = getQueryParams()["product_list_order"];
+            var sortDir = getQueryParams()["product_list_dir"];
+            if (listOrder != null && listOrder != "") {
+                if (listOrder == 'price' && sortDir == 'desc') {
+                    jQuery('#sorter2').val('priceD');
+                } else {
+                    jQuery('#sorter2').val(listOrder);
+                }
+            } else {
+                jQuery('#sorter2').val("position");
+            }
+            
+            jQuery('#sorter2').change(function() {
+                console.log('changed');
+                if (jQuery(this).val() == "position") {
+                    window.location = window.location.pathname + "?product_list_dir=asc";
+                    return false;
+                }
+                if (jQuery(this).val() == "name") {   
+                    window.location = window.location.pathname + "?product_list_dir=asc&product_list_order=name";
+                    return false;
+                }
+                if (jQuery(this).val() == "priceD") {
+                    window.location = window.location.pathname + "?product_list_dir=desc&product_list_order=price";
+                    return false;
+                }
+                if (jQuery(this).val() == "price") {
+                    window.location = window.location.pathname + "?product_list_dir=asc&product_list_order=price";
+                    return false;
+                }
+                if (jQuery(this).val() == "news_from_date") {
+                    window.location = window.location.pathname + "?product_list_dir=desc&product_list_order=news_from_date";
+                    return false;
+                }
+            });
+        }
+        //clearInterval(waitforLimiter);
+    }, 300);
+</script>

@@ -1,0 +1,69 @@
+<style>
+    #createAcctBox {
+        border: 3px solid #fab41c;
+        padding: 10px;
+        display: none;
+    }
+
+    #createAcctTitle {
+        font-size: 34px;
+        margin-bottom: 20px;
+    }
+
+    .icon {
+        float: left;
+        width: 20%;
+        margin: auto;
+        text-align: center;
+    }
+
+    .iconText {
+        float: left;
+        width: 75%;
+    }
+
+    .buttonContainer {
+        padding-top: 20px;
+        margin: 20px 20%;
+        text-align: center;
+    }
+</style>
+
+<div id="createAcctBox">
+    <a href="https://www.packersproshop.com/customer/account/create/">
+        <div id="createAcctTitle">Create Account</div>
+        <div>
+            <div class="icon">IC</div>
+            <div class="iconText">checkout faster</div>
+        </div>
+        <div style="clear:both">
+            <div class="icon">IC</div>
+            <div class="iconText">save multiple addresses for easy gifting to family members and friends</div>
+        </div>
+        <div style="clear:both">
+            <div class="icon">IC</div>
+            <div class="iconText">scheck the status of your order</div>
+        </div>
+        <div style="clear:both">
+            <div class="icon">IC</div>
+            <div class="iconText">view your past orders</div>
+        </div>
+        <div style="clear:both" class="buttonContainer">
+            <button class="action primary">Create an account</button>
+        </div>
+    </a>
+</div>
+<script>
+    jQuery(document).ready(function() {
+        var authWrapper = jQuery('.authentication-wrapper').attr('style');
+        console.log('GBTest-0004');
+        if (typeof authWrapper !== typeof undefined && authWrapper !== false) {
+            jQuery('#createAcctBox').hide();
+        } else {
+            jQuery('#createAcctBox').show();
+        }
+    });
+</script>
+<!--
+https://www.packersproshop.com/checkout/?at_preview_token=M9-2c9OPnwBG9FxBIGKAgP6Q6SSdOZtmpKQy5dE9tHk&at_preview_index=1_2&at_preview_listed_activities_only=true&at_preview_evaluate_as_true_audience_ids=5672083#shipping
+-->

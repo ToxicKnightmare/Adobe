@@ -1,0 +1,33 @@
+<style>
+    .sorter2 {
+        float: left;
+        text-align: right;
+        margin-right: 30px;
+    }
+</style>
+<script>
+    //var sorter = jQuery('.toolbar-sorter.sorter').html();
+    //console.log(sorter);
+    var waitforLimiter = setInterval(function() {
+        if (jQuery('.limiter:eq(1)').length) {
+            if (jQuery('.sorter2').length) {
+                // dont add another sort
+            } else {
+                var sorter = jQuery('.toolbar-sorter.sorter').html();
+                jQuery('.limiter:eq(1)').prepend('<div class="sorter2">' + sorter + '</div>');
+            }
+            //clearInterval(waitforLimiter);
+        } else {
+            console.log('doesnt exist');
+        }
+    }, 300);
+</script>
+
+
+
+
+
+
+<!--
+https://www.packersproshop.com/green-bay-packers-womens?at_preview_token=M9%2B2c9OPnwBG9FxBIGKAgJDsBoxHxrwL5I6SwGBJk8I%3D&at_preview_index=1_4&at_preview_listed_activities_only=true&at_preview_evaluate_as_true_audience_ids=5672034
+-->

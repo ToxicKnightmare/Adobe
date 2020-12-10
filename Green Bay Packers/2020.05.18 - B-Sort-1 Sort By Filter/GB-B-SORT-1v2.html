@@ -1,0 +1,132 @@
+<style>
+    .sorter2 {
+        float: left;
+        text-align: right;
+        margin-right: 30px;
+    }
+</style>
+<script>
+    //var sorter = jQuery('.toolbar-sorter.sorter').html();
+    //console.log(sorter);
+    var waitforLimiter = setInterval(function() {
+        if (jQuery('.limiter:eq(1)').length) {
+            if (jQuery('.sorter2').length) {
+                // dont add another sort
+            } else {
+                var sorter = jQuery('.toolbar-sorter.sorter').html();
+                jQuery('.limiter:eq(1)').prepend('<div class="sorter2">' + sorter + '</div>');
+            }
+            //clearInterval(waitforLimiter);
+        } else {
+            console.log('doesnt exist');
+        }
+    }, 300);
+</script>
+
+
+
+
+<!-- v2 code -->
+
+<style>
+    .sorter-label:not(.new), select#sorter, a.sorter-action {
+        display: none !important;
+    }
+    select#sorter2 {
+        width:190px;
+        height: 32px;
+    }
+</style>
+<script>
+    function getQueryParams() {
+        var vars = [], hash;
+        var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+        for(var i = 0; i < hashes.length; i++)
+        {
+            hash = hashes[i].split('=');
+            vars.push(hash[0]);
+            vars[hash[0]] = hash[1];
+        }
+        return vars;
+    }
+    
+    var sorter2 = '<label class="sorter-label new" for="sorter">Sort By</label><select class="sorter-options" data-role="sorter" id="sorter2" style="height: 32px; width: 190px;"><option data-value="desc" value="position" selected="selected">Recommended</option><option data-value="desc" value="name">Product Name</option><option data-value="asc" value="priceD">Price: High-Low</option><option data-value="desc" value="price">Price: Low-High</option><option data-value="desc" value="news_from_date">Newest</option></select>';
+    console.log(sorter2);
+    var waitforSorter = setInterval(function() {
+        if (jQuery('#sorter2').length) {
+            // dont add another sort
+        } else {
+            jQuery('.toolbar-sorter.sorter').prepend(sorter2);
+            var listOrder = getQueryParams()["product_list_order"];
+            var sortDir = getQueryParams()["product_list_dir"];
+            if (listOrder != null && listOrder != "") {
+                if (listOrder == 'price' && sortDir == 'desc') {
+                    jQuery('#sorter2').val('priceD');
+                } else {
+                    jQuery('#sorter2').val(listOrder);
+                }
+            } else {
+                jQuery('#sorter2').val("position");
+            }
+            
+            jQuery('#sorter2').change(function() {
+                console.log('changed');
+                if (jQuery(this).val() == "position") {
+                    window.location = window.location.pathname + "?product_list_dir=asc";
+                    return false;
+                }
+                if (jQuery(this).val() == "name") {   
+                    window.location = window.location.pathname + "?product_list_dir=asc&product_list_order=name";
+                    return false;
+                }
+                if (jQuery(this).val() == "priceD") {
+                    window.location = window.location.pathname + "?product_list_dir=desc&product_list_order=price";
+                    return false;
+                }
+                if (jQuery(this).val() == "price") {
+                    window.location = window.location.pathname + "?product_list_dir=asc&product_list_order=price";
+                    return false;
+                }
+                if (jQuery(this).val() == "news_from_date") {
+                    window.location = window.location.pathname + "?product_list_dir=asc&product_list_order=news_from_date";
+                    return false;
+                }
+            });
+        }
+        //clearInterval(waitforLimiter);
+    }, 300);
+</script>
+
+
+<!-- Add to bottom Code -->
+<style>
+    .sorter2 {
+        float: left;
+        text-align: right;
+        margin-right: 30px;
+    }
+</style>
+<script>
+    var sorter = jQuery('.toolbar-sorter.sorter').html();
+    //console.log(sorter);
+    var waitforLimiter = setInterval(function() {
+        if (jQuery('.limiter:eq(1)').length) {
+            if (jQuery('.sorter2').length) {
+                // dont add another sort
+            } else {
+                sorter = jQuery('.toolbar-sorter.sorter').html();
+                jQuery('.limiter:eq(1)').prepend('<div class="sorter2">' + sorter + '</div>');
+                jQuery('.sorter2 select').val(jQuery('#sorter2').val());
+                jQuery('.sorter2 select').attr('id','sorter3');
+            }
+            //clearInterval(waitforLimiter);
+        } else {
+            console.log('doesnt exist');
+        }
+    }, 300);
+</script>
+
+
+<!--
+https://www.packersproshop.com/green-bay-packers-womens?at_preview_token=M9-2c9OPnwBG9FxBIGKAgJDsBoxHxrwL5I6SwGBJk8I&at_preview_index=1_4&at_preview_listed_activities_only=true&at_preview_evaluate_as_true_audience_ids=5672034
+-->

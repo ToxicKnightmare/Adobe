@@ -1,0 +1,39 @@
+<script>
+    jQuery(document).ready(function() {
+        var matchText = "<br id='matching'><b>The billing address on your debit/credit card must match the billing address on the order.</b>"
+        var waitForMyBilling = setInterval(function() {
+            if (jQuery('div.loader').length > 0) {
+                //console.log("Waiting");
+            } else {
+                //console.log("ready");
+                if (jQuery('label[for="billing-address-same-as-shipping-magedelight_cybersource"]').length > 0) {
+                    jQuery('label[for="billing-address-same-as-shipping-magedelight_cybersource"] span').after(matchText); 
+                    clearInterval(waitForMyBilling);
+                }
+            }
+        },500);
+        
+        
+        jQuery("input#magedelight_cybersource").click(function() {
+            clearInterval(waitForMyBilling);
+        });
+        
+    });
+</script>
+
+
+
+
+
+<!----- OLDER CODE -->
+<script>
+    var matchText = "<br id='matching'><b>The billing address on your debit/credit card must match the billing address on the order.</b>"
+    var waitForMyBilling = setInterval(function() {
+        if (jQuery('label[for="billing-address-same-as-shipping-magedelight_cybersource"]').length > 0) {
+            jQuery('label[for="billing-address-same-as-shipping-magedelight_cybersource"]').after(matchText); 
+            clearInterval(waitForMyBilling);
+        } else {
+            //console.log("looking for label");
+        }
+    },600);
+</script>

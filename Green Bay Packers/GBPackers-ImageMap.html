@@ -1,0 +1,32 @@
+<img src="https://i.imgur.com/jLWUMmG.png" usemap="#image-map" width="302px">
+<map name="image-map">
+    <area target="_self" alt="David Bakhtiari Home Game Jersey" title="David Bakhtiari Home Game Jersey" href="/index.html" coords="19,120,140,165" shape="rect" data-playerName="bakhtiari">
+    <area target="_self" alt="Jaire Alexander Home Game Jersey" title="Jaire Alexander Home Game Jersey" href="/index.html" coords="19,180,140,225" shape="rect" data-playerName="alexander">
+    <area target="_self" alt="A.J. Dillon Home Game Jersey" title="A.J. Dillon Home Game Jersey" href="/index.html" coords="19,240,140,285" shape="rect" data-playerName="dillon">
+    <area target="_self" alt="Jake Kumerow Home Game Jersey" title="Jake Kumerow Home Game Jersey" href="/index.html" coords="160,120,280,165" shape="rect" data-playerName="kumerow">
+    <area target="_self" alt="Jordan Love Home Game Jersey" title="Jordan Love Home Game Jersey" href="/index.html" coords="160,180,280,225" shape="rect" data-playerName="love">
+    <area target="_self" alt="Packers Custom Home Limited Jersey" title="Packers Custom Home Limited Jersey" href="/index.html" coords="160,240,280,285" shape="rect" data-playerName="custom">
+</map>
+<script>
+    $(document).ready(function() {
+        $('area').click(function() {
+            var followedPlayer = $(this).attr('data-playerName');
+            console.log(followedPlayer);
+            adobe.target.getOffer({
+                "mbox": "player-followed-mbox",
+                "params": {
+                    "playerFollowed": followedPlayer
+                },
+                "success": function(offer) {
+                    adobe.target.applyOffer( {
+                        "mbox": "player-followed-mbox",
+                        "offer": offer
+                    });
+                },
+                "error": function(staus, error) {
+                    console.log('Error: ', status, error);
+                }
+            })
+        });
+    });
+</script>
