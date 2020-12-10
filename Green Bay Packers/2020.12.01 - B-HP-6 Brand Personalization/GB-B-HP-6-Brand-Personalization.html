@@ -1,0 +1,114 @@
+<style>
+  .HP-Banner1 { display: none !important }
+</style>
+<script>
+    jQuery(document).ready(function() {
+    //var waitforBrands = setTimeout(function() {
+        jQuery('.HP-Brands img').click(function() {
+            var followedBrand = jQuery(this).attr('alt');
+            console.log(followedBrand);
+            if (followedBrand == "") {
+                followedBrand = "Lambeau Field Exclusives";
+            }
+            adobe.target.getOffer({
+                "mbox": "brand-followed-mbox",
+                "params": {
+                    "brandFollowed": followedBrand
+                },
+                "success": function(offer) {
+                    adobe.target.applyOffer( {
+                        "mbox": "brand-followed-mbox",
+                        "offer": offer
+                    });
+                },
+                "error": function(staus, error) {
+                    console.log('Error: ', status, error);
+                }
+            })
+        });
+    //},300);
+    });
+</script>
+
+<!--
+    New Era
+    Wear by Erin Andrews
+    -- Lambeau Field Exclusives
+    DKNY
+    Packers Pro Shop Exclusives
+    Nike
+-->
+
+<!-- Profile Script -->
+
+if (mbox.name == 'brand-followed-mbox') {
+       return (mbox.param('brandFollowed'));
+}
+
+<!-- Branded -->
+<div data-appearance="default" data-content-type="html" data-decoded="true" data-element="main" id="cdq_element_658" style="border-style: none; border-width: 1px; border-radius: 0px; margin: 0px; padding: 0px;">
+    <style id="cdq_element_659" type="text/css">
+        .HP-Brands {
+            display: none !important;
+        }
+    </style>
+</div>
+
+<div data-content-type="block" data-appearance="default" data-element="main" style="text-align: center; border-style: none; border-width: 1px; border-radius: 0px; margin: 25px 0px 0px; padding: 0px;">
+    <div class="widget block block-static-block">
+        <div data-content-type="row" data-appearance="contained" data-element="main">
+            <div data-enable-parallax="0" data-parallax-speed="0.5" data-background-images="{}" data-element="inner" style="justify-content: flex-start; display: flex; flex-direction: column; background-position: left top; background-size: cover; background-repeat: no-repeat; background-attachment: scroll; border-style: none; border-width: 1px; border-radius: 0px; margin: 10px 0px; padding: 0px;">
+                <figure data-content-type="image" data-appearance="full-width" data-element="main" style="margin: 0px; padding: 0px; border-style: none;"><a href="/green-bay-packers-erin-andrews?HP-Brand2-Wear" target="" data-link-type="default" title="" data-element="link"><img class="pagebuilder-mobile-hidden" src="https://www.packersproshop.com/media/wysiwyg/Home_Page/brands/112820-homepage-Wear.jpg" alt="Wear by Erin Andrews" title="" data-element="desktop_image" style="border-style: none; border-width: 1px; border-radius: 0px; max-width: 100%; height: auto;"><img class="pagebuilder-mobile-only" src="https://www.packersproshop.com/media/wysiwyg/Home_Page/brands/112820-homepage-Wear-mobile.jpg" alt="Wear by Erin Andrews" title="" data-element="mobile_image" style="border-style: none; border-width: 1px; border-radius: 0px; max-width: 100%; height: auto;"></a></figure>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--- KEEEP -->
+<div data-appearance="default" data-content-type="html" data-decoded="true" data-element="main" id="cdq_element_658" style="border-style: none; border-width: 1px; border-radius: 0px; margin: 0px; padding: 0px;">
+    <style id="cdq_element_659" type="text/css">
+        .HP-Brands {
+            display: none !important;
+        }
+    </style>
+</div>
+
+<div data-appearance="default" data-content-type="block" data-element="main" id="cdq_element_660" style="border-style: none; border-width: 1px; border-radius: 0px; margin: 0px; padding: 0px;">
+    <div class="widget block block-static-block" id="cdq_element_661">
+        <div data-appearance="contained" data-content-type="row" data-element="main" id="cdq_element_662">
+            <div data-background-images="{}" data-element="inner" data-enable-parallax="0" data-parallax-speed="0.5" id="cdq_element_663" style="justify-content: flex-start; display: flex; flex-direction: column; background-position: left top; background-size: cover; background-repeat: no-repeat; background-attachment: scroll; border-style: none; border-width: 1px; border-radius: 0px; margin: 0px; padding: 0px;">
+                <div class="pagebuilder-column-group" data-content-type="column-group" data-element="main" data-grid-size="12" id="cdq_element_664" style="display: flex;">
+                    <div class="pagebuilder-column" data-appearance="full-height" data-background-images="{}" data-content-type="column" data-element="main" id="cdq_element_665" style="justify-content: flex-start; display: flex; flex-direction: column; background-position: left top; background-size: cover; background-repeat: no-repeat; background-attachment: scroll; border-style: none; border-width: 1px; border-radius: 0px; width: 16.6667%; margin: 0px; padding: 0px; align-self: stretch;">
+                        <figure data-appearance="full-width" data-content-type="image" data-element="main" id="cdq_element_666" style="text-align: center; margin: 0px; padding: 0px; border-style: none;"><a data-element="link" data-link-type="default" href="/new-era?promo_name=HP-Brand1-New-Era" id="cdq_element_25" target="" title=""><img alt="New Era" class="pagebuilder-mobile-hidden" data-element="desktop_image" id="cdq_element_667" src="https://www.packersproshop.com/media/wysiwyg/Home_Page/brands/112820-homepage-NewEra-Logo.jpg" style="border-style: none; border-width: 1px; border-radius: 0px; max-width: 100%; height: auto;" title="" /><img alt="New Era" class="pagebuilder-mobile-only" data-element="mobile_image" id="cdq_element_668" src="https://www.packersproshop.com/media/wysiwyg/Home_Page/brands/112820-homepage-NewEra-Logo-mobile.jpg" style="border-style: none; border-width: 1px; border-radius: 0px; max-width: 100%; height: auto;" title="" /></a></figure>
+                    </div>
+
+                    <div class="pagebuilder-column" data-appearance="full-height" data-background-images="{}" data-content-type="column" data-element="main" id="cdq_element_669" style="justify-content: flex-start; display: flex; flex-direction: column; background-position: left top; background-size: cover; background-repeat: no-repeat; background-attachment: scroll; border-style: none; border-width: 1px; border-radius: 0px; width: 16.6667%; margin: 0px; padding: 0px; align-self: stretch;">
+                        <figure data-appearance="full-width" data-content-type="image" data-element="main" id="cdq_element_670" style="text-align: center; margin: 0px; padding: 0px; border-style: none;"><a data-element="link" data-link-type="default" href="/green-bay-packers-erin-andrews?HP-Brand2-Wear" id="cdq_element_26" target="" title=""><img alt="Wear by Erin Andrews" class="pagebuilder-mobile-hidden" data-element="desktop_image" id="cdq_element_671" src="https://www.packersproshop.com/media/wysiwyg/Home_Page/brands/112820-homepage-Wear-Logo.jpg" style="border-style: none; border-width: 1px; border-radius: 0px; max-width: 100%; height: auto;" title="" /><img alt="Wear by Erin Andrews" class="pagebuilder-mobile-only" data-element="mobile_image" id="cdq_element_672" src="https://www.packersproshop.com/media/wysiwyg/Home_Page/brands/112820-homepage-Wear-Logo-mobile.jpg" style="border-style: none; border-width: 1px; border-radius: 0px; max-width: 100%; height: auto;" title="" /></a></figure>
+                    </div>
+
+                    <div class="pagebuilder-column" data-appearance="full-height" data-background-images="{}" data-content-type="column" data-element="main" id="cdq_element_673" style="justify-content: flex-start; display: flex; flex-direction: column; background-position: left top; background-size: cover; background-repeat: no-repeat; background-attachment: scroll; border-style: none; border-width: 1px; border-radius: 0px; width: 16.6667%; margin: 0px; padding: 0px; align-self: stretch;">
+                        <figure data-appearance="full-width" data-content-type="image" data-element="main" id="cdq_element_674" style="text-align: center; margin: 0px; padding: 0px; border-style: none;"><a data-element="link" data-link-type="default" href="/green-bay-packers-lambeau-field?promo_name=HP-Brand3-Lambeau-Field" id="cdq_element_27" target="" title=""><img alt="" class="pagebuilder-mobile-hidden" data-element="desktop_image" id="cdq_element_675" src="https://www.packersproshop.com/media/wysiwyg/Home_Page/brands/112820-homepage-LambeauField-Logo.jpg" style="border-style: none; border-width: 1px; border-radius: 0px; max-width: 100%; height: auto;" title="" /><img alt="" class="pagebuilder-mobile-only" data-element="mobile_image" id="cdq_element_676" src="https://www.packersproshop.com/media/wysiwyg/Home_Page/brands/112820-homepage-LambeauField-Logo-mobile.jpg" style="border-style: none; border-width: 1px; border-radius: 0px; max-width: 100%; height: auto;" title="" /></a>
+
+                            <figcaption data-element="caption" id="cdq_element_677">Lambeau Field Exclusives</figcaption>
+                        </figure>
+                    </div>
+
+                    <div class="pagebuilder-column" data-appearance="full-height" data-background-images="{}" data-content-type="column" data-element="main" id="cdq_element_678" style="justify-content: flex-start; display: flex; flex-direction: column; background-position: left top; background-size: cover; background-repeat: no-repeat; background-attachment: scroll; border-style: none; border-width: 1px; border-radius: 0px; width: 16.6667%; margin: 0px; padding: 0px; align-self: stretch;">
+                        <figure data-appearance="full-width" data-content-type="image" data-element="main" id="cdq_element_679" style="text-align: center; margin: 0px; padding: 0px; border-style: none;"><a data-element="link" data-link-type="default" href="/dkny?promo_name=HP-Brand4-DKNY" id="cdq_element_28" target="" title=""><img alt="DKNY" class="pagebuilder-mobile-hidden" data-element="desktop_image" id="cdq_element_680" src="https://www.packersproshop.com/media/wysiwyg/Home_Page/brands/112820-homepage-DKNY-Logo.jpg" style="border-style: none; border-width: 1px; border-radius: 0px; max-width: 100%; height: auto;" title="" /><img alt="DKNY" class="pagebuilder-mobile-only" data-element="mobile_image" id="cdq_element_681" src="https://www.packersproshop.com/media/wysiwyg/Home_Page/brands/112820-homepage-DKNY-Logo-mobile.jpg" style="border-style: none; border-width: 1px; border-radius: 0px; max-width: 100%; height: auto;" title="" /></a></figure>
+                    </div>
+
+                    <div class="pagebuilder-column" data-appearance="full-height" data-background-images="{}" data-content-type="column" data-element="main" id="cdq_element_682" style="justify-content: flex-start; display: flex; flex-direction: column; background-position: left top; background-size: cover; background-repeat: no-repeat; background-attachment: scroll; border-style: none; border-width: 1px; border-radius: 0px; width: 16.6667%; margin: 0px; padding: 0px; align-self: stretch;">
+                        <figure data-appearance="full-width" data-content-type="image" data-element="main" id="cdq_element_683" style="text-align: center; margin: 0px; padding: 0px; border-style: none;"><a data-element="link" data-link-type="default" href="/packers-pro-shop-exclusives?promo_name=HP-Brand5-Pro-Shop-Exclusives" id="cdq_element_29" target="" title=""><img alt="Packers Pro Shop Exclusives" class="pagebuilder-mobile-hidden" data-element="desktop_image" id="cdq_element_684" src="https://www.packersproshop.com/media/wysiwyg/Home_Page/brands/112820-homepage-ProShopExclusives-Logo.jpg" style="border-style: none; border-width: 1px; border-radius: 0px; max-width: 100%; height: auto;" title="" /><img alt="Packers Pro Shop Exclusives" class="pagebuilder-mobile-only" data-element="mobile_image" id="cdq_element_685" src="https://www.packersproshop.com/media/wysiwyg/Home_Page/brands/112820-homepage-ProShopExclusives-Logo-mobile.jpg" style="border-style: none; border-width: 1px; border-radius: 0px; max-width: 100%; height: auto;" title="" /></a></figure>
+                    </div>
+
+                    <div class="pagebuilder-column" data-appearance="full-height" data-background-images="{}" data-content-type="column" data-element="main" id="cdq_element_686" style="justify-content: flex-start; display: flex; flex-direction: column; background-position: left top; background-size: cover; background-repeat: no-repeat; background-attachment: scroll; border-style: none; border-width: 1px; border-radius: 0px; width: 16.6667%; margin: 0px; padding: 0px; align-self: stretch;">
+                        <figure data-appearance="full-width" data-content-type="image" data-element="main" id="cdq_element_687" style="text-align: center; margin: 0px; padding: 0px; border-style: none;"><a data-element="link" data-link-type="default" href="/green-bay-packers-nike?promo_name=HP-Brand6-Nike" id="cdq_element_30" target="" title=""><img alt="Nike" class="pagebuilder-mobile-hidden" data-element="desktop_image" id="cdq_element_688" src="https://www.packersproshop.com/media/wysiwyg/Home_Page/brands/112820-homepage-Nike-Logo.jpg" style="border-style: none; border-width: 1px; border-radius: 0px; max-width: 100%; height: auto;" title="" /><img alt="Nike" class="pagebuilder-mobile-only" data-element="mobile_image" id="cdq_element_689" src="https://www.packersproshop.com/media/wysiwyg/Home_Page/brands/112820-homepage-Nike-Logo-mobile.jpg" style="border-style: none; border-width: 1px; border-radius: 0px; max-width: 100%; height: auto;" title="" /></a></figure>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+justify-content: flex-start; display: flex !important; flex-direction: column; background-position: left top; background-size: cover; background-repeat: no-repeat; background-attachment: scroll; border-style: none; border-width: 1px; border-radius: 0px; margin: 0px; padding: 0px;
